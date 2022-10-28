@@ -1,0 +1,28 @@
+.similarproduct__container {
+    width: 100%;    
+    
+}
+
+.similarproduct__title {
+    width: 100%;
+}
+
+.similarproduct__cards-container {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 450px) {
+    .similarproduct__container {
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
+        margin-top: 30px;
+    }
+    
+}

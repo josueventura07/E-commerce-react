@@ -1,0 +1,27 @@
+.input__search-container {
+    width: 100%;
+    max-width: 900px;
+    height: 35px;
+    margin: auto;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+}
+
+
+.input__search {
+    width: 90%;
+    height: 90%;
+    padding: 10px;
+}
+
+@media (min-width: 450px) {
+    
+    .input__search-container {
+        grid-column: 2 / 8;
+        grid-row: 1 / 2;
+    }
+    
+}

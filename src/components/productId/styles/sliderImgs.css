@@ -1,0 +1,115 @@
+.slider__container {
+    padding: 20px 50px;
+    width: 100%;
+    max-width: 500px;
+    /* display: flex;
+    flex-direction: column; */
+    position: relative;
+    margin-top: 130px;
+}
+
+.slider__static {
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 1.5;
+    overflow: hidden;
+}
+
+.slider_traslateX {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    
+    transition: transform 500ms ease;
+}
+
+.slider__img-container {
+    padding: 10px;
+    width: calc(100% / 3);
+}
+
+
+.slider__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.slider__prev,
+.slider__next {
+    width: 40px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--bg-color-red);
+    box-shadow: 0px 0px 10px #0003;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: font-size 100ms ease, box-shadow 100ms ease;
+}
+
+.slider__prev {
+    left: 5px;
+}
+
+.slider__next {
+    right: 5px;
+}
+
+.slider__prev:hover,
+.slider__next:hover {
+    font-size: 25px;
+    box-shadow: 0px 0px 10px #0008;
+    transition: font-size 100ms ease, box-shadow 100ms ease;
+}
+
+
+.slider__img_container-small {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.slider__img_box-small {
+    width: 70px;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.slider__img_box-small:hover {
+    border: 2px solid var(--bg-color-red);
+    border-radius: 5px;
+    transition: border 150ms ease, border-radius 150ms ease;
+}
+
+.slider__img-small {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor: pointer;
+    transition: border 150ms ease, border-radius 150ms ease;
+}
+
+.slider__img-active {
+    border: 2px solid var(--bg-color-red);
+    border-radius: 5px;
+}
+
+@media (min-width: 450px) {
+    .slider__container {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        max-height: 450px;
+        
+    }   
+    
+}

@@ -1,0 +1,132 @@
+.product__info {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #aaa;
+}
+
+/* .product__info-img-container {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 40px;
+    
+}
+
+.product__info-img {
+    object-fit: contain;
+    width: 100%;
+    height: 400px;
+} */
+
+.product__info-title {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.product__info-description {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.product__info-footer {
+    display: grid;
+    justify-items: center;
+    row-gap: 40px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.product__info__price-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.product__info__price-number {
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    gap: 0.5rem;
+    transform: translateX(10px);
+}
+
+.product__info__price-number::before {
+    content: '$';
+}
+.product__info__quantity-label,
+.product__info__price-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.product__info__quantity-container {
+    width: 100px;
+}
+
+.product__info__quantity-counter {
+    display: flex;
+    border: 1px solid #aaa;
+    width: max-content;
+}
+
+.product__info__quantity-counter-minus,
+.product__info__quantity-counter-result,
+.product__info__quantity-counter-plus {
+    height: 30px;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product__info__quantity-counter-result {
+    font-weight: 600;
+}
+
+.product__info__quantity-counter-minus,
+.product__info__quantity-counter-plus {
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+
+.product__info__quantity-counter-minus:hover,
+.product__info__quantity-counter-plus:hover {
+    background-color: #eee;
+    
+}
+
+.product__info-btn {
+    grid-column: span 2;
+    padding: 15px;
+    background-color: var(--bg-color-red);
+    color: white;
+    font-size: 0.95rem;
+    width: 100%;
+    cursor: pointer;
+    transition: transform 100ms ease;
+}
+
+.product__info-btn:hover {
+    filter: brightness(1.1);
+    transition: transform 100ms ease;
+} 
+
+.product__info__quantity-counter-result {
+    aspect-ratio: 1.5;
+    border-left: 1px solid #aaa;
+    border-right: 1px solid #aaa;
+}
+
+.product__info-icon {
+    margin-left: 1rem;
+}
+
+@media (min-width: 450px) {
+    .product__info {
+        margin-top: 130px;
+        border: none;
+    }
+    
+}

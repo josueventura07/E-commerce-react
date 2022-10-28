@@ -1,0 +1,26 @@
+.filter_category-container {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.filtercaterogy_list {
+    cursor: pointer;
+}
+
+.filtercaterogy_list:hover {
+    border-bottom: 1px var(--bg-color-red) solid;
+    color: #0009;
+    filter: brightness(1.06);
+}
+
+@media (min-width: 450px) {
+    .filter_category-container {
+        width: 250px;
+        padding-left: 50px;
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        margin-top: 180px;
+    }
+}

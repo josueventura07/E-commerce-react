@@ -1,0 +1,76 @@
+.loginscreen_containder {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 2;
+    position: absolute;
+    top: 30%;
+    
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 3px 3px 7px 1px #0003;
+    
+}
+
+.loginscreen_inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.loginscreen_btn {
+    margin-top: 20px;
+    width: 100px;
+    aspect-ratio: 4;
+    background-color: var(--bg-color-red);
+    border: none;
+    box-shadow: 3px 3px 7px 1px #0009;
+    cursor: pointer;
+}
+
+.loginscreen_btn:hover {
+    filter: brightness(1.2);
+    transform: scale(1.02);
+}
+
+.logout_btn-container {
+    width: 100px;
+    aspect-ratio: 4;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 55px;
+    right: 10px;
+    z-index: 600;
+}
+
+.logout_btn {
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color-red);
+    color: white;
+    box-shadow: 5px 5px 8px 1px #0002;
+    border-radius: 5px;
+}
+
+.logout_btn:hover {
+    filter: brightness(1.1);
+    transform: scale(1.02);
+}
+
+@media (min-width: 450px) {
+    
+    .logout_btn-container {
+        position: absolute;
+        top: 90px;
+        right: 10px;
+        z-index: 600;
+    }
+    
+}
