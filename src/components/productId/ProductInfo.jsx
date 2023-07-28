@@ -18,7 +18,7 @@ const ProductInfo = ({product}) => {
  } 
 
  const handleAddCart = () => {
-    const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
+    const URL = 'http://localhost:9000/api/v1/cart'
     const data = {
         id: product.id,
         quantity: counter 
@@ -36,7 +36,7 @@ const ProductInfo = ({product}) => {
         {/* <header className='product__info-img-container'>
             <img className='product__info-img' src={product?.productImgs[0]} alt="img" />
         </header> */}
-        <h2 className='product__info-title'>{product?.title}</h2>
+        <h2 className='product__info-title'>{product?.productName}</h2>
         <p className='product__info-description'>{product?.description}</p>
         <footer className='product__info-footer'>
             <div className='product__info__price-container'>

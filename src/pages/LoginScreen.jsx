@@ -9,12 +9,12 @@ const {handleSubmit, register, reset} = useForm()
 const [isLogged, setIsLogged] = useState(false)
 
 const submit = data => {
-    const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/users/login'
+    const URL = 'http://localhost:9000/api/v1/login'
 
  axios.post(URL, data)
  .then(res => {
     console.log(res.data)
-    localStorage.setItem('token', res.data.data.token)
+    localStorage.setItem('token', res.data.token)
     setIsLogged(true)
     setShowIsLogged(true)
 })

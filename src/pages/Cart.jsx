@@ -19,7 +19,7 @@ const cart = useSelector(state => state.cart)
  }, [])
 
  const  handlePurchase = () => {
-      const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/purchases'
+      const URL = 'http://localhost:9000/api/v1/purchases'
 
       const data = {
         street: "Green St. 1456",
@@ -46,7 +46,7 @@ useEffect(() => {
         setTotal(result)
  }
 }, [cart])
-  
+  console.log(cart)
   return (
     <div className='cart'>
       <div className='cart__container'>

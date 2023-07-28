@@ -7,14 +7,14 @@ const SliderImgs = ({product}) => {
 
   const handlePrev = () => {
     if(indexImg - 1 < 0) {
-      setIndexImg(product.productImgs.length - 1)
+      setIndexImg(product.imgsCatalogs.length - 1)
     } else {
         setIndexImg(indexImg - 1)
     }
   }
 
   const handleNext = () => {
-    if(indexImg + 1 > product.productImgs.length - 1) {
+    if(indexImg + 1 > product.imgsCatalogs.length - 1) {
       setIndexImg(0)
     } else {
         setIndexImg(indexImg + 1)
@@ -31,9 +31,9 @@ return (
       <div className='slider__static'>
         <div style={{transform: `translateX(calc(-${indexImg} / 3 * 100%))`}} className='slider_traslateX'>
            { 
-                product.productImgs.map(url => (
+                  product.imgsCatalogs.map(url => (
                 <div key={url} className='slider__img-container'>
-                    <img className='slider__img' src={url} alt="img" />
+                    <img className='slider__img' src={url.imgUrl} alt="img" />
                 </div>
             ))
             }
@@ -44,9 +44,9 @@ return (
       
       <div className='slider__img_container-small'>
         {
-          product.productImgs.map(url => (
+          product.imgsCatalogs.map(url => (
                 <div onClick={handleClick} key={url} className='slider__img_box-small'>
-                    <img className='slider__img-small' src={url} alt="img" />
+                    <img className='slider__img-small' src={url.imgUrl} alt="img" />
                 </div>
           ))        
         }

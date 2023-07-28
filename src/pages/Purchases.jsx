@@ -10,14 +10,14 @@ const Purchases = () => {
 
 useEffect(() => {
 
-    const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/purchases'
+    const URL = 'http://localhost:9000/api/v1/purchases'
 axios.get(URL, getConfig())
-.then(res => setPurchases(res.data.data.purchases))
+.then(res => setPurchases(res.data.purchases))
 .catch(err => console.log(err))    
 
 }, [])
 
-
+console.log(purchases)
 
   return (
     <div className='purchases__body'>

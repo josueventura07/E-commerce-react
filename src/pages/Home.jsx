@@ -4,7 +4,7 @@ import CardProduct from '../components/home/CardProduct'
 import FilterCategory from '../components/home/FilterCategory'
 import FilterPrice from '../components/home/FilterPrice'
 import InputSearch from '../components/home/InputSearch'
-import { getAllProducts } from '../store/slices/Products.slice'
+import { getAllProducts } from '../store/slices/products.slice'
 import SortByPrice from './SortByPrice'
 import './styles/home.css'
 
@@ -28,7 +28,7 @@ useEffect(() => {
 useEffect(() => {
 
   if(inputText !== '' && products) {
-    const cb = product => product.title.toLowerCase().includes(inputText.toLowerCase().trim())
+    const cb = product => product.productName.toLowerCase().includes(inputText.toLowerCase().trim())
     setFilterByText(products.filter(cb))
   } else {
     setFilterByText(products)
@@ -40,7 +40,7 @@ const callBackFilterPrice = product => {
 }
 
 
-
+console.log(products)
 
 
   return (

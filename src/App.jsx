@@ -41,7 +41,7 @@ function App() {
       />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/product/:id' element={<ProductId />} />
+        <Route path='/products/:id' element={<ProductId />} />
         <Route path='/login' element={<LoginScreen setShowIsLogged = {setShowIsLogged}/>} />
 
         <Route element={<ProtectedRoutes />}>

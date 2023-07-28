@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { ascendingProducts, descendingProducts } from '../store/slices/products.slice'
+//import { ascendingProducts, descendingProducts } from '../store/slices/products.slice'
 import './styles/sortByPrice.css'
 
 const SortByPrice = () => {

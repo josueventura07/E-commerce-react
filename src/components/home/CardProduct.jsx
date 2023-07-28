@@ -12,12 +12,12 @@ const navigate = useNavigate()
 const dispatch = useDispatch()
 
 const handleNavegation = () => {
-    navigate(`/product/${product.id}`)
+    navigate(`/products/${product.id}`)
 }
 
 const handleAddCart = e => {
     e.stopPropagation()
-    const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
+    const URL = 'http://localhost:9000/api/v1/cart'
     const data = {
         id: product.id,
         quantity: 1
@@ -29,14 +29,14 @@ const handleAddCart = e => {
     })
     .catch(err => console.log(err))
 }
-
+console.log(product.imgsCatalogs[0])
   return (
     <article onClick={handleNavegation} className='card__product'>
         <header className='card__product__header'>
-            <img className='card__product__img' src={product.productImgs[0]} alt="img" />
+        <img className='card__product__img' src={product.imgsCatalogs[0].imgUrl} alt="img" />      
         </header>
         <div className='card__product__body'>
-            <h3 className='card__product__title'>{product.title}</h3>
+            <h3 className='card__product__title'>{product.productName}</h3>
             <div className='card__product__price'>
                 <span className='card__product__price-label'>Price</span>
                 <p className='card__product__price-number'>{product.price}</p>

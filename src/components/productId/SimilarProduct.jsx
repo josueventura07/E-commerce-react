@@ -11,15 +11,15 @@ const SimilarProduct = ({product}) => {
 
     
     useEffect(() => {
-      const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/products/categories'
+      const URL = 'http://localhost:9000/api/v1/products/categories'
       axios.get(URL)
-      .then(res => setCategories(res.data.data.categories))
+      .then(res => setCategories(res.data.categories))
       .catch(err => console.log(err))
     }, [])
     
     useEffect(() => {
         if(categories && product) {
-            const cb = category => category.name === product.category
+            const cb = category => category.name === product.category.name
             setIdCategory(categories.filter(cb)[0].id) 
         }
     }, [categories, product])
@@ -30,14 +30,14 @@ const SimilarProduct = ({product}) => {
       
       if(idCategory) {
 
-        const URL = `https://ecommerce-api-react.herokuapp.com/api/v1/products?category=${idCategory}`
+        const URL = `http://localhost:9000/api/v1/products?category=${idCategory}`
         axios.get(URL)
-        .then(res => setSimilarProducts(res.data.data.products))
+        .then(res => setSimilarProducts(res.data.products))
         .catch(err => console.log(err))
       }
     }, [idCategory])
     
-    
+    console.log(product)
   return (
     <div className='similarproduct__container'>
       <h2 className='similarproduct__title'>Discover Similar Products</h2>

@@ -6,11 +6,11 @@ const productsSlice = createSlice({
     initialState: null,
     reducers: {
         setProductsGlobal: (state, action) => action.payload,
-        ascendingProducts: state => {
-            state.sort((a, b) => +a.price - +b.price)},
+       ascendingProducts: state => {
+          state.sort((a, b) => +a.price - +b.price)},
 
-        descendingProducts: state => {
-            state.sort((a, b) => +b.price - +a.price)}
+       descendingProducts: state => {
+          state.sort((a, b) => +b.price - +a.price)}
     }
 })
 
@@ -20,16 +20,16 @@ export default productsSlice.reducer
 
 
 export const getAllProducts = () => (dispatch) => {
-    const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/products'
+    const URL = 'http://localhost:9000/api/v1/products'
     return axios.get(URL)
-    .then(res => dispatch(setProductsGlobal(res.data.data.products)))
+    .then(res => dispatch(setProductsGlobal(res.data.products)))
     .catch(err => console.log(err))
 }
 
 export const getProductsByCategory = id => (dispatch) => {
-    const URL = `https://ecommerce-api-react.herokuapp.com/api/v1/products?category=${id}`
+    const URL = `http://localhost:9000/api/v1/products?category=${id}`
     return axios.get(URL)
-    .then(res => dispatch(setProductsGlobal(res.data.data.products)))
+    .then(res => dispatch(setProductsGlobal(res.data.products)))
     .catch(err => console.log(err))
 }
 

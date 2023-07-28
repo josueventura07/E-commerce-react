@@ -15,15 +15,15 @@ const {id} = useParams()
 
 useEffect(() => {
 
-  const URL = `https://ecommerce-api-react.herokuapp.com/api/v1/products/${id}`
+  const URL = `http://localhost:9000/api/v1/products/${id}`
 
   axios.get(URL)
-  .then(res => setProduct(res.data.data.product))
+  .then(res => setProduct(res.data))
   .catch(err => console.log(err))
 }, [id])
 
 
-
+console.log(product)
   
   return (
    <div className='productid__container'>
