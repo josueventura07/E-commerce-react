@@ -46,7 +46,8 @@ useEffect(() => {
         setTotal(result)
  }
 }, [cart])
-  console.log(cart)
+ 
+
   return (
     <div className='cart'>
       <div className='cart__container'>

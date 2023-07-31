@@ -38,6 +38,16 @@
     grid-column: span 2;
 }
 
+.card__product__stock-label {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.card__product__stock-number {
+    transform: translateX(10px);
+    font-weight: 600;
+}
+
 .card__product__price-label {
     font-size: 0.9rem;
     color: #aaa;
@@ -50,6 +60,10 @@
 
 .card__product__price-number::before {
     content: '$';
+}
+
+.card__product__stock-number::after {
+    content: '.00';
 }
 
 .card__product__icon-container {

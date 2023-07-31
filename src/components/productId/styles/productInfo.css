@@ -43,6 +43,13 @@
     margin-bottom: 30px;
 }
 
+.product__info__stock-number {
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    transform: translateX(10px);
+}
+
 .product__info__price-number {
     font-size: 1rem;
     font-weight: 500;
@@ -54,6 +61,12 @@
 .product__info__price-number::before {
     content: '$';
 }
+
+.product__info__stock-number::after {
+    content: '.00';
+}
+
+.product__info__stock-label,
 .product__info__quantity-label,
 .product__info__price-label {
     font-weight: 600;

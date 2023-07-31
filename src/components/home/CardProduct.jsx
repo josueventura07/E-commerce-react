@@ -1,5 +1,4 @@
 import axios from 'axios'
-import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { getAllProductCart } from '../../store/slices/cart.slice'
@@ -29,15 +28,17 @@ const handleAddCart = e => {
     })
     .catch(err => console.log(err))
 }
-console.log(product.imgsCatalogs[0])
+
   return (
     <article onClick={handleNavegation} className='card__product'>
         <header className='card__product__header'>
-        <img className='card__product__img' src={product.imgsCatalogs[0].imgUrl} alt="img" />      
+        <img className='card__product__img' src={product.imgsCatalogs} alt="img" />      
         </header>
         <div className='card__product__body'>
             <h3 className='card__product__title'>{product.productName}</h3>
             <div className='card__product__price'>
+                <span className='card__product__stock-label'>Stock</span>
+                <p className='card__product__stock-number'>{product.stock}</p>
                 <span className='card__product__price-label'>Price</span>
                 <p className='card__product__price-number'>{product.price}</p>
             </div>

@@ -23,8 +23,6 @@ useEffect(() => {
 }, [id])
 
 
-console.log(product)
-  
   return (
    <div className='productid__container'>
     {

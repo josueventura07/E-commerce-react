@@ -1,7 +1,9 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import getConfig from '../../utils/getConfig'
 import './styles/productInfo.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { getAllProducts } from '../../store/slices/products.slice'
 
 const ProductInfo = ({product}) => {
 
@@ -29,8 +31,21 @@ const ProductInfo = ({product}) => {
     .catch(err => console.log(err))
  }
 
+ const products = useSelector(state => state.products)
 
+const dispatch = useDispatch()
 
+useEffect(() => {
+  dispatch(getAllProducts())
+}, [])
+
+const stock = []
+
+products?.forEach(element => {
+  if(element.id === product?.id) {
+    stock.push(element.stock)
+  }  
+})
   return (
     <article className='product__info'>
         {/* <header className='product__info-img-container'>
@@ -40,6 +55,8 @@ const ProductInfo = ({product}) => {
         <p className='product__info-description'>{product?.description}</p>
         <footer className='product__info-footer'>
             <div className='product__info__price-container'>
+                <span className='product__info__stock-label'>Stock</span>
+                <span className='product__info__stock-number'>{stock[0]}</span>
                 <span className='product__info__price-label'>Price</span>
                 <span className='product__info__price-number'>{product?.price}</span>
             </div>

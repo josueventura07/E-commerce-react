@@ -17,8 +17,6 @@ axios.get(URL, getConfig())
 
 }, [])
 
-console.log(purchases)
-
   return (
     <div className='purchases__body'>
       <h2 className='purchases__title'>Purchases History</h2>

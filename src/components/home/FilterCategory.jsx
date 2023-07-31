@@ -27,7 +27,7 @@ const dispatch = useDispatch()
     }
  }
 
- console.log(categories)
+ 
   return (
     <article className='filter_category-container'>
         <h1>Category</h1>
