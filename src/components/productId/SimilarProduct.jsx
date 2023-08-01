@@ -37,7 +37,7 @@ const SimilarProduct = ({product}) => {
       }
     }, [idCategory])
     
-    console.log(product)
+    
   return (
     <div className='similarproduct__container'>
       <h2 className='similarproduct__title'>Discover Similar Products</h2>

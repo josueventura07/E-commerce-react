@@ -38,7 +38,7 @@ useEffect(() => {
 const callBackFilterPrice = product => {
     return +product.price >= filterByPrice.from && +product.price <= filterByPrice.to
 }
-console.log(products)
+
 
   return (
     <main className='home'>

@@ -8,6 +8,7 @@ import { getAllProducts } from '../../store/slices/products.slice'
 const ProductInfo = ({product}) => {
 
  const [counter, setCounter] = useState(1)
+ const [stock, setStock] = useState()
  
  const handleMinus = () => {
     if(counter - 1 > 0) {
@@ -39,13 +40,15 @@ useEffect(() => {
   dispatch(getAllProducts())
 }, [])
 
-const stock = []
-
-products?.forEach(element => {
+useEffect(()=> {
+  products?.forEach(element => {
   if(element.id === product?.id) {
-    stock.push(element.stock)
+    setStock(element.stock)
   }  
 })
+}, [product])
+
+
   return (
     <article className='product__info'>
         {/* <header className='product__info-img-container'>
@@ -56,7 +59,7 @@ products?.forEach(element => {
         <footer className='product__info-footer'>
             <div className='product__info__price-container'>
                 <span className='product__info__stock-label'>Stock</span>
-                <span className='product__info__stock-number'>{stock[0]}</span>
+                <span className='product__info__stock-number'>{stock}</span>
                 <span className='product__info__price-label'>Price</span>
                 <span className='product__info__price-number'>{product?.price}</span>
             </div>
