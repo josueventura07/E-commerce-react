@@ -4,18 +4,21 @@ import './styles/cardPurchases.css'
 
 const CardPurchase = ({purchase}) => {
 
-console.log(purchase.products)
-     
   return (
     <article className='purchases_container'>
         <header className='purchases_date'>{purchase.updatedAt}</header>
+        <h4>Numero de Orden: {purchase.id}</h4>
+        <h3>Monto Total: {purchase.amount}</h3>
         <div className='purchase_card'>
             {
-                purchase.products.sort().map(product => (
-                    <section key={product.id}>
-                        <h3>{product.productName}</h3>
-                        <div>Quantity {product.detail_orders.quantity}</div>
-                        <div>Price$ {product.price}</div>
+                purchase.detail_orders?.sort().map(product => (
+                    <section key={product.product.id}>
+                        <h3>{product.product.productName}</h3>
+                        <div>Quantity {product.quantity}</div>
+                        <div>Price$ {product.product.price}</div>
+                        <div className='purchases_img_container'>
+                            <img className='purchases_img' src={product.product.imgsCatalogs[0].imgUrl} alt="" />
+                        </div>
                     </section>
                 ))
             }

@@ -32,7 +32,7 @@ return (
         <div style={{transform: `translateX(calc(-${indexImg} / 3 * 100%))`}} className='slider_traslateX'>
            { 
                   product.imgsCatalogs.map(url => (
-                <div key={url} className='slider__img-container'>
+                <div key={url.id} className='slider__img-container'>
                     <img className='slider__img' src={url.imgUrl} alt="img" />
                 </div>
             ))
@@ -45,7 +45,7 @@ return (
       <div className='slider__img_container-small'>
         {
           product.imgsCatalogs.map(url => (
-                <div onClick={handleClick} key={url} className='slider__img_box-small'>
+                <div onClick={handleClick} key={url.id} className='slider__img_box-small'>
                     <img className='slider__img-small' src={url.imgUrl} alt="img" />
                 </div>
           ))        

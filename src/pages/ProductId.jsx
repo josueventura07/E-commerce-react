@@ -31,7 +31,7 @@ useEffect(() => {
     <ProductInfo 
     product={product}
     />
-    <SimilarProduct 
+    <SimilarProduct
     product={product}
     />
    </div>

@@ -10,7 +10,7 @@ const Purchases = () => {
 
 useEffect(() => {
 
-    const URL = 'http://localhost:9000/api/v1/purchases'
+    const URL = 'http://localhost:9000/api/v1/purchases/me'
 axios.get(URL, getConfig())
 .then(res => setPurchases(res.data.purchases))
 .catch(err => console.log(err))    

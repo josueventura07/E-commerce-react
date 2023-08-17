@@ -9,27 +9,37 @@ const ProductInfo = ({product}) => {
 
  const [counter, setCounter] = useState(1)
  const [stock, setStock] = useState()
- 
+
  const handleMinus = () => {
-    if(counter - 1 > 0) {
-        setCounter(counter - 1)
-    }
- }
+  if(counter - 1 > 0) {
+      setCounter(counter - 1)
+  }
+}
 
- const handlePlus = () => {
+const handlePlus = () => {
+  if(counter + 1 <= stock) {
     setCounter(counter + 1)
- } 
+  }
+}
 
- const handleAddCart = () => {
-    const URL = 'http://localhost:9000/api/v1/cart'
-    const data = {
-        id: product.id,
-        quantity: counter 
+const handleAddCart = () => {
+    if(stock <= 0) {
+      alert('Este articulo ya no tiene existencia, quizas haya otro similiar!')
+      return
+    } else {
+      const URL = 'http://localhost:9000/api/v1/cart'
+        const data = {
+          productId: product.id,
+          quantity: counter 
+        }
+
+        axios.post(URL, data, getConfig())
+        .then(res => {
+          console.log(res.data)
+          alert(`${product.productName}, fue agregado al carrito de compras`)
+        })
+        .catch(err => console.log(err))
     }
-
-    axios.post(URL, data, getConfig())
-    .then(res => console.log(res.data))
-    .catch(err => console.log(err))
  }
 
  const products = useSelector(state => state.products)
@@ -43,17 +53,17 @@ useEffect(() => {
 useEffect(()=> {
   products?.forEach(element => {
   if(element.id === product?.id) {
-    setStock(element.stock)
+    setStock(element.stock ? element.stock : 0)
   }  
 })
-}, [product])
+}, [product, stock])
 
 
   return (
     <article className='product__info'>
-        {/* <header className='product__info-img-container'>
-            <img className='product__info-img' src={product?.productImgs[0]} alt="img" />
-        </header> */}
+        {/*<header className='product__info-img-container'>
+            <img className='product__info-img' src={product?.imgsCatalogs[0]} alt="img" />
+        </header>*/}
         <h2 className='product__info-title'>{product?.productName}</h2>
         <p className='product__info-description'>{product?.description}</p>
         <footer className='product__info-footer'>

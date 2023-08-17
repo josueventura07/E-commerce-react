@@ -11,7 +11,7 @@ const SimilarProduct = ({product}) => {
 
     
     useEffect(() => {
-      const URL = 'http://localhost:9000/api/v1/products/categories'
+      const URL = 'http://localhost:9000/api/v1/categories'
       axios.get(URL)
       .then(res => setCategories(res.data.categories))
       .catch(err => console.log(err))
@@ -37,7 +37,7 @@ const SimilarProduct = ({product}) => {
       }
     }, [idCategory])
     
-    
+  
   return (
     <div className='similarproduct__container'>
       <h2 className='similarproduct__title'>Discover Similar Products</h2>

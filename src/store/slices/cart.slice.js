@@ -16,8 +16,8 @@ export const {setCartGlobal} = cartSlice.actions
 export default cartSlice.reducer
 
 export const getAllProductCart = () => (dispatch) => {
-        const URL = 'http://localhost:9000/api/v1/cart'
+        const URL = 'http://localhost:9000/api/v1/carts/myCart'
         return axios.get(URL, getConfig())
-        .then(res => dispatch(setCartGlobal(res.data.cart[0])))
+        .then(res => dispatch(setCartGlobal(res.data.cart)))
         .catch(err => console.log(err))
 }

@@ -21,15 +21,15 @@ const cart = useSelector(state => state.cart)
  const  handlePurchase = () => {
       const URL = 'http://localhost:9000/api/v1/purchases'
 
-      const data = {
+      /*const data = {
         street: "Green St. 1456",
         colony: "Southwest",
         zipCode: 12345,
         city: "USA",
         references: "Some references"
-    }
+    }*/
 
-      axios.post(URL, data, getConfig())
+      axios.post(URL, cart, getConfig())
       .then(res => {
         console.log(res.data)
         dispatch(setCartGlobal(null))
@@ -40,22 +40,22 @@ const cart = useSelector(state => state.cart)
  
 useEffect(() => {
   if(cart) {
-    const result = cart.products.reduce((acc, cv) => {
-      return acc + Number(cv.price) * cv.productsInCart.quantity 
+    const result = cart.reduce((acc, cv) => {
+      return acc + Number(cv.product.price) * cv.quantity 
     }, 0)
         setTotal(result)
  }
 }, [cart])
- 
 
+console.log(cart)
   return (
     <div className='cart'>
       <div className='cart__container'>
         {
-          cart?.products.map(product => (
-             <CartProduct 
-              key={product.id} 
-              product={product}
+          cart?.map(cart => (
+            <CartProduct 
+              key={cart.id} 
+              product={cart}
              /> 
           ))
         }
