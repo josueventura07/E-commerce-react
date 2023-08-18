@@ -10,7 +10,7 @@ const CartProduct = (cart) => {
     const dispatch = useDispatch()
 
     const handleDeleted = () => {
-        const URL = `http://localhost:9000/api/v1/cart/${cart.product.product.id}`
+        const URL = `https://jv-ecommerce.onrender.com/api/v1/carts/${cart.product.product.id}`
         axios.delete(URL, getConfig())
         .then(res => {
             console.log(res.data)

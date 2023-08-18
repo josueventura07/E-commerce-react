@@ -1,18 +1,21 @@
 .cartproduct_container {
     width: 100%;
+    max-width: 450px;
     display: flex;
     padding: 10px;
     margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
     box-shadow: 3px 4px 15px 0.5px #0004;
     transition: traslateY 500ms ease;
     background-color: white;
     z-index: 1500;
 }
 
-.cartproduct_container:hover {
+/*.cartproduct_container:hover {
     transform: translateY(-4px);
     transition: traslateY 500ms ease;
-}
+}*/
 
 .cartProduct_img_container {
     width: 30%;
@@ -87,7 +90,7 @@
     left: 11px;
 }
 
-@media (min-width: 450px) {
+@media screen and (min-width: 450px) {
     
     .cart__product-btn {
         

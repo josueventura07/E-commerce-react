@@ -19,7 +19,7 @@ const handleAddCart = e => {
     if(product.stock <= 0) {
         alert('Este articulo ya no tiene existencia, quizas haya otro similiar!')
     } else {
-        const URL = 'https://jv-ecommerce.onrender.com/api/v1/cart'
+        const URL = 'https://jv-ecommerce.onrender.com/api/v1/carts'
         const data = {
             productId: product.id,
             quantity: 1

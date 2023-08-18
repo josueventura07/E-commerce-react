@@ -16,7 +16,7 @@ const Header = ({showIsLogged}) => {
 console.log(navMenu)
   return (
     <header className='header__container'>
-            <div className='header_menu_btn-container' onClick={handleNavMenu}>
+            <div className='header_menu_btn-container'>
       {
         navMenu ?
         <i className="menu_btn fa-regular fa-circle-xmark"></i>
@@ -25,25 +25,25 @@ console.log(navMenu)
       
       }
       </div>
-      <h1 onClick={handleNavMenu} className='header__title'>
-        <Link to={'/'}>e-commercer</Link>
+      <h1 className='header__title'>
+        <Link to={'/'}>E-COMMERCE</Link>
       </h1>
       <nav className='header__nav'>
-        <ul className={navMenu ? 'header__list' : 'header_active_menu'}>
+        <ul className={'header__list'}>
 
-            <li onClick={handleNavMenu} className='header__item'>
-                <NavLink className='header__link' to='/login'>
-                    {showIsLogged ? 'Logged' : 'Login'}
+            <li className='header__item'>
+                <NavLink className='header__link' to='/cart'>
+                    Cart
                 </NavLink>
             </li>
-            <li onClick={handleNavMenu} className='header__item'>
+            <li className='header__item'>
                 <NavLink className='header__link' to='/purchases'>
                     Purchases
                 </NavLink>
             </li>
             <li onClick={handleNavMenu} className='header__item'>
-                <NavLink className='header__link' to='/cart'>
-                    Cart
+                <NavLink className='header__link' to='/login'>
+                    {showIsLogged ? 'Logged' : 'Login'}
                 </NavLink>
             </li>
         </ul>
