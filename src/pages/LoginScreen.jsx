@@ -40,7 +40,7 @@ const handleLogout = () => {
 if(isLogged) {
     return (
         <div className='logout_btn-container'>
-            <button className='logout_btn' onClick={handleLogout}>Logout</button>
+            <button className='logout_btn' onClick={handleLogout}><i class="fa-solid fa-right-to-bracket">Logout</i></button>
         </div>
         
     )
