@@ -11,7 +11,7 @@ const SimilarProduct = ({product}) => {
 
     
     useEffect(() => {
-      const URL = 'http://localhost:9000/api/v1/categories'
+      const URL = 'https://jv-ecommerce.onrender.com/api/v1/categories'
       axios.get(URL)
       .then(res => setCategories(res.data.categories))
       .catch(err => console.log(err))
@@ -30,7 +30,7 @@ const SimilarProduct = ({product}) => {
       
       if(idCategory) {
 
-        const URL = `http://localhost:9000/api/v1/products?category=${idCategory}`
+        const URL = `https://jv-ecommerce.onrender.com/api/v1/products?category=${idCategory}`
         axios.get(URL)
         .then(res => setSimilarProducts(res.data.products))
         .catch(err => console.log(err))

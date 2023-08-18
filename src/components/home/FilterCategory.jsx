@@ -9,7 +9,7 @@ const FilterCategory = () => {
  const [categories, setCategories] = useState()
  
  useEffect(() => {
-    const URL = 'http://localhost:9000/api/v1/categories'
+    const URL = 'https://jv-ecommerce.onrender.com/api/v1/categories'
    axios.get(URL)
    .then(res => setCategories(res.data.categories))
    .catch(err => console.log(err))

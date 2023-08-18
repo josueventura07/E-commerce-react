@@ -19,7 +19,7 @@ const cart = useSelector(state => state.cart)
  }, [])
 
  const  handlePurchase = () => {
-      const URL = 'http://localhost:9000/api/v1/purchases'
+      const URL = 'https://jv-ecommerce.onrender.com/api/v1/purchases'
 
       /*const data = {
         street: "Green St. 1456",

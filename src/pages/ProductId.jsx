@@ -15,7 +15,7 @@ const {id} = useParams()
 
 useEffect(() => {
 
-  const URL = `http://localhost:9000/api/v1/products/${id}`
+  const URL = `https://jv-ecommerce.onrender.com/api/v1/products/${id}`
 
   axios.get(URL)
   .then(res => setProduct(res.data))

@@ -27,7 +27,7 @@ const handleAddCart = () => {
       alert('Este articulo ya no tiene existencia, quizas haya otro similiar!')
       return
     } else {
-      const URL = 'http://localhost:9000/api/v1/cart'
+      const URL = 'https://jv-ecommerce.onrender.com/api/v1/cart'
         const data = {
           productId: product.id,
           quantity: counter 

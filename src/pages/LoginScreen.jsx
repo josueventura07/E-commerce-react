@@ -9,7 +9,7 @@ const {handleSubmit, register, reset} = useForm()
 const [isLogged, setIsLogged] = useState(false)
 
 const submit = data => {
-    const URL = 'http://localhost:9000/api/v1/login'
+    const URL = 'https://jv-ecommerce.onrender.com/api/v1/login'
 
  axios.post(URL, data)
  .then(res => {

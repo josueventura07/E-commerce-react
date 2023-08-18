@@ -20,14 +20,14 @@ export default productsSlice.reducer
 
 
 export const getAllProducts = () => (dispatch) => {
-    const URL = 'http://localhost:9000/api/v1/products/stock'
+    const URL = 'https://jv-ecommerce.onrender.com/api/v1/products/stock'
     return axios.get(URL)
     .then(res => dispatch(setProductsGlobal(res.data.products)))
     .catch(err => console.log(err))
 }
 
 export const getProductsByCategory = id => (dispatch) => {
-    const URL = `http://localhost:9000/api/v1/products?category=${id}`
+    const URL = `https://jv-ecommerce.onrender.com/api/v1/products?category=${id}`
     return axios.get(URL)
     .then(res => dispatch(setProductsGlobal(res.data.products)))
     .catch(err => console.log(err))
