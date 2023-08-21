@@ -8,8 +8,10 @@
 }
 
 .cart__container {
-    height: auto;
+    min-height: 100vh;
+    padding-bottom: 10px;
     
+        
 }
 
 .cart_amount-container {
@@ -34,24 +36,22 @@
     margin-left: 30px;
 }
 
-@media (min-width: 750px) {
+@media screen and (min-width: 750px) {
     
     .cart {
         width: 50%;
-        height: 92%;
-        position: fixed;
+        position: absolute;
         right: 10px;
         margin-top: 70px;
-    }
-
-    .cart_amount-container {
-        margin-top: 0;
+        
     }
 
     .cart__container {
-        height: 95%;
-        overflow-y: scroll;
-        scroll-behavior: smooth;
+        min-height: calc(100vh - 140px);
+    }
+    
+    .cart_amount-container {
+        margin-top: 0;
     }
     
 }
